@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableWidget" name="data_table">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>291</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="rowCount">
+     <number>0</number>
+    </property>
+    <property name="columnCount">
+     <number>0</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QLineEdit" name="number_edit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>30</y>
+      <width>51</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>8</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="generate_button">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>30</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Generate</string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="two_cubes_table">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>80</y>
+      <width>201</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="rowCount">
+     <number>0</number>
+    </property>
+    <property name="columnCount">
+     <number>0</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QTableWidget" name="four_cubes_table">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>80</y>
+      <width>201</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="rowCount">
+     <number>0</number>
+    </property>
+    <property name="columnCount">
+     <number>0</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QTableWidget" name="result_cubes_table">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>270</y>
+      <width>201</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="rowCount">
+     <number>0</number>
+    </property>
+    <property name="columnCount">
+     <number>0</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QTableWidget" name="matrix_table">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>270</y>
+      <width>201</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="rowCount">
+     <number>0</number>
+    </property>
+    <property name="columnCount">
+     <number>0</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="run_button">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>30</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Run</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>generate_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>generate_data()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>run_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>run_algorithm()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>235</x>
+     <y>57</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>328</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>generate_data()</slot>
+  <slot>run_algorithm()</slot>
+ </slots>
+</ui>
