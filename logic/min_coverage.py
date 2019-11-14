@@ -27,8 +27,9 @@ def restructure_matrix(matrix):
     for i, row in enumerate(matrix):
         for j, value in enumerate(row):
             r_matrix[i][j] = value
-    
+
     return r_matrix
+
 
 def find_row_with_max_one_count(matrix):
     """

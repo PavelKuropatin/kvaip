@@ -1,4 +1,4 @@
-from constants import ONE, ZERO, DC
+from utils.constants import ONE, ZERO, DC
 
 
 def _(x):
@@ -7,5 +7,5 @@ def _(x):
     if x == ZERO:
         return "0"
     if x == DC:
-        return "DC"
+        return "dc"
     return str(x)

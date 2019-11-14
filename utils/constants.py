@@ -1,0 +1,6 @@
+ONE = 3
+ZERO = 4
+DC = 5
+
+F_ALL = (ONE, ZERO, DC)
+F_FOR_GROUPS = (ONE, DC)
