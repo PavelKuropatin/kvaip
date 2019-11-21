@@ -11,74 +11,51 @@ from utils.constants import ONE, DC, F_FOR_GROUPS
 
 
 def get_kvaip_info(cubes):
-    f = 3
-    f = 3
-    f = 3
-    future_cubes = cubes
+    current_cubes = cubes
 
     out_cubes: List[Cube] = []
     step = 0
     while True:
-        grouped_m: Dict[int, List] = group_by_f(future_cubes)
-        f = 3
-        f = 3
-        paired_m: List[Tuple[List, List]] = pair_m(grouped_m)
-        f = 3
-        f = 3
+        grouped_m: Dict[int, List] = group_m_by_f(current_cubes)
 
-        two_cubes = get_two_cubes(paired_m, future_cubes)
-        f = 3
-        f = 3
+        paired_m: List[Tuple[List, List]] = pair_m(grouped_m)
+
+        two_cubes = get_two_cubes(paired_m, current_cubes)
+
         if not two_cubes:
-            f = 3
             if step:
-                out_cubes += future_cubes
+                out_cubes += current_cubes
             break
 
         four_cubes = get_four_cubes(two_cubes)
-        f = 3
-        f = 3
+
         if not four_cubes:
-            f = 3
             if step:
-                future_cubes, unused_cubes = resolve_cubes(future_cubes, two_cubes)
+                current_cubes, unused_cubes = resolve_cubes(current_cubes, two_cubes)
                 out_cubes += unused_cubes
-                out_cubes += future_cubes
+                out_cubes += current_cubes
             else:
                 out_cubes += two_cubes
             break
 
-        future_cubes, unused_cubes = resolve_cubes(two_cubes, four_cubes)
+        current_cubes, unused_cubes = resolve_cubes(two_cubes, four_cubes)
         out_cubes += unused_cubes
-        f = 3
-        f = 3
-        f = 3
-        f = 3
-        if not future_cubes:
-            out_cubes += future_cubes
-            break
-        f = 3
-        f = 3
-        f = 3
-        step += 1
 
-    f = 3
-    f = 3
+        if not current_cubes:
+            out_cubes += current_cubes
+            break
+
+        step += 1
 
     result_cubes = out_cubes
     m_with_f_one = get_m_with_f_one(cubes)
-    f = 3
-    f = 3
+
     matrix = build_matrix_for_coverage(result_cubes, m_with_f_one)
-    f = 3
-    f = 3
+
     return result_cubes, m_with_f_one, matrix
 
 
 def build_matrix_for_coverage(result_cubes: List[Cube], m_with_f_one):
-    f = 3
-    f = 3
-    f = 3
     return [
         [
             1 if cube.has_m(m) else 0
@@ -97,15 +74,12 @@ def get_m_with_f_one(cubes: List[Cube]):
 
 
 def resolve_cubes(prev_cubes: List[Cube], curr_cubes: List[Cube]):
-    f = 3
-    f = 3
     unused_cubes = []
     for prev_cube in prev_cubes:
         for curr_cube in curr_cubes:
             if not prev_cube.is_covered(curr_cube) and prev_cube not in unused_cubes:
                 unused_cubes.append(prev_cube)
-    f = 3
-    f = 3
+
     return curr_cubes, [
         unused_cube
         for unused_cube in unused_cubes
@@ -129,7 +103,7 @@ def get_two_cubes(pairs: List[Tuple[List, List]], cubes: List[Cube]):
     return two_cubes
 
 
-def group_by_f(cubes: List[Cube]):
+def group_m_by_f(cubes: List[Cube]):
     """
     group data by count of one in "x" array
     skip cube if its "f" is not in f_values
@@ -148,7 +122,7 @@ def group_by_f(cubes: List[Cube]):
 
 def pair_m(groups: Dict[int, List]):
     keys = list(sorted(groups.keys()))
-    f = 3
+
     return [
         (groups[keys[i]], groups[keys[i + 1]])
         for i in range(len(keys) - 1)
