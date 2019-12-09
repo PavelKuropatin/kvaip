@@ -5,13 +5,14 @@ from utils.constants import F_ALL, DC
 
 class Cube:
 
-    def __init__(self, x: List[int], f: int, m: Union[List[int], int]):
-        from utils.utils import _
+    def __init__(self, x: List[int], f: int, m: Union[List[int], int], parent: List = ()):
+        from utils.utils import as_str
         self.__x = x
         self.__sum_x = sum([_ for _ in x if _ not in F_ALL])
         self.__f = f
         self.__m = m
-        self.__str_f = _(f)
+        self.__str_f = as_str(f)
+        self.__parent = parent
 
     @property
     def x(self):
@@ -93,7 +94,7 @@ class Cube:
             return False
         return all([
             self.__x == other.x,
-            self.__m == other.m,
+            set(self.__m) == set(other.m),
             self.__f == other.f
         ])
 

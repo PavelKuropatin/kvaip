@@ -1,7 +1,8 @@
 from collections import defaultdict
+from typing import List
 
 
-def get_min_coverage(matrix):
+def get_min_coverage(matrix: List[List[int]]) -> List[int]:
     matrix = restructure_matrix(matrix)
     used_rows = []
 
@@ -17,7 +18,7 @@ def get_min_coverage(matrix):
     return used_rows
 
 
-def restructure_matrix(matrix):
+def restructure_matrix(matrix: List[List[int]]):
     """
     restructure 'list' matrix (row of rows)
     to 'dict' matrix (dict of dict) 

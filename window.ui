@@ -6,21 +6,21 @@
             <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>925</width>
-                <height>600</height>
+                <width>1136</width>
+                <height>733</height>
             </rect>
         </property>
         <property name="windowTitle">
-            <string>MainWindow</string>
+            <string>QuineMcCluskey</string>
         </property>
         <widget class="QWidget" name="centralwidget">
             <widget class="QTableWidget" name="data_table">
                 <property name="geometry">
                     <rect>
-                        <x>20</x>
-                        <y>80</y>
-                        <width>291</width>
-                        <height>471</height>
+                        <x>10</x>
+                        <y>60</y>
+                        <width>441</width>
+                        <height>601</height>
                     </rect>
                 </property>
                 <property name="rowCount">
@@ -32,30 +32,36 @@
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                     <bool>false</bool>
                 </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>24</number>
+                </attribute>
                 <attribute name="verticalHeaderVisible">
                     <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                    <number>18</number>
                 </attribute>
             </widget>
             <widget class="QLineEdit" name="number_edit">
                 <property name="geometry">
                     <rect>
-                        <x>20</x>
-                        <y>30</y>
-                        <width>51</width>
-                        <height>20</height>
+                        <x>10</x>
+                        <y>10</y>
+                        <width>71</width>
+                        <height>41</height>
                     </rect>
                 </property>
                 <property name="text">
-                    <string>3</string>
+                    <string>5</string>
                 </property>
             </widget>
             <widget class="QPushButton" name="generate_button">
                 <property name="geometry">
                     <rect>
-                        <x>100</x>
-                        <y>30</y>
-                        <width>75</width>
-                        <height>23</height>
+                        <x>90</x>
+                        <y>10</y>
+                        <width>91</width>
+                        <height>41</height>
                     </rect>
                 </property>
                 <property name="text">
@@ -65,10 +71,10 @@
             <widget class="QTableWidget" name="result_cubes_table">
                 <property name="geometry">
                     <rect>
-                        <x>330</x>
-                        <y>80</y>
-                        <width>301</width>
-                        <height>381</height>
+                        <x>460</x>
+                        <y>60</y>
+                        <width>671</width>
+                        <height>281</height>
                     </rect>
                 </property>
                 <property name="rowCount">
@@ -78,19 +84,25 @@
                     <number>0</number>
                 </property>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
-                    <bool>false</bool>
+                    <bool>true</bool>
+                </attribute>
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>24</number>
                 </attribute>
                 <attribute name="verticalHeaderVisible">
                     <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                    <number>18</number>
                 </attribute>
             </widget>
             <widget class="QTableWidget" name="matrix_table">
                 <property name="geometry">
                     <rect>
-                        <x>650</x>
-                        <y>80</y>
-                        <width>241</width>
-                        <height>331</height>
+                        <x>460</x>
+                        <y>350</y>
+                        <width>671</width>
+                        <height>311</height>
                     </rect>
                 </property>
                 <property name="rowCount">
@@ -99,24 +111,57 @@
                 <property name="columnCount">
                     <number>0</number>
                 </property>
+                <attribute name="horizontalHeaderVisible">
+                    <bool>true</bool>
+                </attribute>
                 <attribute name="horizontalHeaderCascadingSectionResizes">
                     <bool>false</bool>
                 </attribute>
-                <attribute name="verticalHeaderVisible">
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                    <number>24</number>
+                </attribute>
+                <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
                     <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderVisible">
+                    <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                    <number>18</number>
+                </attribute>
+                <attribute name="verticalHeaderHighlightSections">
+                    <bool>true</bool>
                 </attribute>
             </widget>
             <widget class="QPushButton" name="run_button">
                 <property name="geometry">
                     <rect>
                         <x>200</x>
-                        <y>30</y>
-                        <width>75</width>
-                        <height>23</height>
+                        <y>10</y>
+                        <width>101</width>
+                        <height>41</height>
                     </rect>
                 </property>
                 <property name="text">
                     <string>Run</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="covered_rows_label">
+                <property name="geometry">
+                    <rect>
+                        <x>460</x>
+                        <y>670</y>
+                        <width>671</width>
+                        <height>31</height>
+                    </rect>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>12</pointsize>
+                    </font>
+                </property>
+                <property name="text">
+                    <string/>
                 </property>
             </widget>
         </widget>
@@ -125,8 +170,8 @@
                 <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>925</width>
-                    <height>21</height>
+                    <width>1136</width>
+                    <height>18</height>
                 </rect>
             </property>
         </widget>
